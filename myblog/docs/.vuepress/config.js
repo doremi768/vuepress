@@ -15,7 +15,7 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/doremi768' },
     ],
     sidebar: {
-      "/html_css/": [""]
+      '/html_css/':['','html','css']
     }
   }
 }
