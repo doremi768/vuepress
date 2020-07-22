@@ -7,9 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "zsh deploy.sh"
+    "deploy": "bash deploy.sh"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "moment": "^2.27.0"
+  }
 }

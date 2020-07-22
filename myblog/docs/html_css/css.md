@@ -64,10 +64,10 @@ position的值不为relative和static
 ### 什么是margin合并？
 
 <font color="#3EAF7C">**块级元素**</font> 的上外边距与下外边距有时会合并为单个外边距，这种现象就是margin合并
-<p style="padding: 15px; background-color: #F5F5F5;">
+::: tip
 块级元素，<font color="#3EAF7C">**不包括**</font> 浮动和绝对定位,尽管它们可以让元素块状化   
 只发生在和当前文档流方向的相垂直的方向上
-</p>
+::::
 
 ### margin合并的三种场景以及不让margin合并的方法
 
@@ -83,7 +83,9 @@ padding-top/bottom 的值
 **②相邻兄弟元素margin合并** (同下)   
 
 **③空块级元素的margin合并**
-<p style="padding: 15px; background-color: #F5F5F5;">特性是即使自身没有设置Margin也是会发生</p>
+:::tip
+特性是即使自身没有设置Margin也是会发生
+:::
 不让margin合并的方法
 ```css
 设置垂直方向的border
@@ -153,6 +155,7 @@ rgba()和opacity都能实现透明效果，但最大的不同是<font color="#FA
 ## 12.Css3的新特性有哪些？
 ### ①新增的各种css选择器(举例)   
 结构伪类选择器
+::: details
 ```css
 li:first-child{  /* 选择的是其父元素的首个子元素 */
     color: red;
@@ -164,8 +167,10 @@ li:nth-child(n){  /* 匹配其父元素的第N个子元素 */
     color: green;
 }
 ```   
+:::
 
 属性选择器
+::: details
 ```css
 div[class^=box] { /*匹配属性的属性值开头为box的每一个元素*/
     color: red;
@@ -177,8 +182,10 @@ div[class*=box] { /*匹配属性的属性值中有box这几个字母的每一个
     color: green;
 }
 ```
+:::
 
 伪元素选择器
+::: details
 ```css
 div::first-letter { /*文本的第一个单词或字*/
   color: red;
@@ -192,9 +199,11 @@ div::selection { /*可改变选中文本的样式*/
   color: green;
 }
 ```
+:::
 
 ### ②文本属性
 text-shadow 文本阴影
+:::details
 ```css
 div{
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -206,8 +215,10 @@ div{
     */
 }
 ```
+:::
 
 Text Overflow 文本溢出属性
+::: details
 ```css
     div{
         text-overflow: clip;/*修剪文本(多余文字不显示)*/
@@ -215,9 +226,11 @@ Text Overflow 文本溢出属性
         text-overflow: string;/*使用给定的字符串来代表被修剪的文本*/
     }
 ```
+:::
 
 ### ③边框
  box-shadow  边框阴影
+ ::: details
  ```css
  div{
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -229,6 +242,7 @@ Text Overflow 文本溢出属性
     */
 }
 ```
+:::
 border-image 边框图片
 
 border-radius 圆角边框

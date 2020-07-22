@@ -41,8 +41,9 @@
 
 * src是 <font color="#3EAF7C">**替换元素**</font> ，用于替换当前内容。
 
-<p style="padding: 15px; background-color: #F5F5F5;">替换元素就是：通过修改某个属性值呈现的内容就可以被替换的元素<p>
-
+:::tip
+替换元素就是：通过修改某个属性值呈现的内容就可以被替换的元素
+:::
 若在文档中添加 `<link href="style.css" rel="sytlesheet">` ，浏览器会识别该文档为css文件，就会<font color="#3EAF7C">**并行**</font>下载资源并且不会停止对当前文档的处理
 
 而当浏览器解析到 `<script src="script.js"></script>` 会<font color="#3EAF7C">**暂停**</font>其他资源的下载和处理
