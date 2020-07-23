@@ -10,9 +10,9 @@
 
  [4.img 标签的 title 和 alt 之间的区别](html.html#_4-img-标签的-title-和-alt-之区别)
 
- [5.src 和 href 的区别](html.html#_5-src-和-href-的区别)
+ [5.src 和 href 的区别](./html.html#_5-src-和-href-的区别)
 
- [6. link 和 @import 的区别](html.html#_6-link-和-import-的区别)
+ [6. link 和 @import 的区别](./html.html#_6-link-和-import-的区别)
 
  [7. 伪类与伪元素的作用是什么？以及它们之间的区别](html.html#_7-伪类与伪元素)
 

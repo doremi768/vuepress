@@ -2,4 +2,4 @@
 
 ## JavaScript语法
 
-[数据类型](grammar)
+[数据类型](grammer)
