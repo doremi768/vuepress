@@ -42,6 +42,14 @@ module.exports = [
         {
           title:'变量',
           path: '/javascript/grammar/3.variable.html#变量'
+        },
+        {
+          title:'闭包',
+          path: '/javascript/grammar/4.闭包.html#闭包'
+        },
+        {
+          title: 'this',
+          path: '/javascript/grammar/5.this.html#this'
         }
       ]
     }
