@@ -50,6 +50,10 @@ module.exports = [
         {
           title: 'this',
           path: '/javascript/grammar/5.this.html#this'
+        },
+        {
+          title: '对象',
+          path: '/javascript/grammar/6.对象.html#对象'
         }
       ]
     }

@@ -11,3 +11,5 @@
 [闭包](/javascript/grammar/4.闭包.html#闭包)
 
 [this](/javascript/grammar/5.this.html#this)
+
+[对象](/javascript/grammar/6.对象.html#对象)
