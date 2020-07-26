@@ -12,4 +12,6 @@
 
 [this](/javascript/grammar/5.this.html#this)
 
-[对象](/javascript/grammar/6.对象.html#对象)
+[循环和遍历](/javascript/grammar/6.循环和遍历.html#循环和遍历)
+
+[对象](/javascript/grammar/7.对象.html#对象)
