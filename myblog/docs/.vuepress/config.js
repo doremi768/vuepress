@@ -4,7 +4,7 @@ const nav = require('./config/nav');
 const sidebar = require('./config/sidebar');
 module.exports = {
   base: "/blog/",
-  title: 'doremi的学习笔记',
+  title: 'Learning Notes',
   description: "",
   head,
   themeConfig: {

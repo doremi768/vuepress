@@ -2,7 +2,7 @@
 home: true
 heroImage: /img/home.png
 heroText: ''
-tagline: '也许用JavaScript可以抽象出整个世界 但是我始终不能抽象出你'
+tagline: '随珠和壁，明月清风'
 actionText: 目录预览
 actionLink: /cacatalog/
 features:

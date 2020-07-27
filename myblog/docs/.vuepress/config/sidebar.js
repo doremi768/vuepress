@@ -28,7 +28,7 @@ module.exports = [
     collapsable: false, 
     children:[
     {
-      title: 'JavaScript语法',
+      title: 'JavaScript基础',
       path: '/javascript/grammar/1.data_type.html#数据类型',
       children:[
         {
@@ -37,7 +37,7 @@ module.exports = [
         },
         {
           title: '相等运算符与比较运算符',
-          path: '/javascript/grammar/2.oc.html#数据类型'
+          path: '/javascript/grammar/2.oc.html#相等运算符与比较运算符'
         },
         {
           title:'变量',
@@ -58,6 +58,14 @@ module.exports = [
         {
           title: '对象',
           path: '/javascript/grammar/7.对象.html#对象'
+        },
+        {
+          title: '对象&类&函数',
+          path: '/javascript/grammar/8.对象&类&函数.html#对象&类&函数'
+        },
+        {
+          title: 'ES6',
+          path: '/javascript/grammar/9.ES6.html#ES6'
         }
       ]
     }

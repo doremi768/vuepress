@@ -1,10 +1,10 @@
 # 指南
 
-## JavaScript语法
+## JavaScript基础
 
 [数据类型](/javascript/grammar/1.data_type.html#数据类型)
 
-[相等运算符与比较运算符](/javascript/grammar/2.oc#数据类型)
+[相等运算符与比较运算符](/javascript/grammar/2.oc.html#相等运算符与比较运算符)
 
 [变量](/javascript/grammar/3.variable.html#变量)
 
@@ -15,3 +15,7 @@
 [循环和遍历](/javascript/grammar/6.循环和遍历.html#循环和遍历)
 
 [对象](/javascript/grammar/7.对象.html#对象)
+
+[对象&类&函数](/javascript/grammar/8.对象&类&函数.html#对象&类&函数)
+
+[ES6](/javascript/grammar/9.ES6.html#ES6)
