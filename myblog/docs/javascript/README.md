@@ -18,4 +18,10 @@
 
 [对象&类&函数](/javascript/grammar/8.对象&类&函数.html#对象&类&函数)
 
-[ES6](/javascript/grammar/9.ES6.html#ES6)
+## ES6
+
+[变量的解构赋值](/javascript/ES6/1.变量的解构赋值.html#变量的解构赋值)
+
+[函数的扩展](/javascript/ES6/2.函数的扩展.html#函数的扩展)
+
+[Set和Map数据结构](/javascript/ES6/3.Set和Map数据结构.html#Set和Map数据结构)

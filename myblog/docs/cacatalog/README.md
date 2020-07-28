@@ -6,4 +6,6 @@
 # Javascript
 ### [Javascript基础](/javascript/#grammar.html)
 
+### [ES6](/javascript/#ES6.html)
+
 # 项目

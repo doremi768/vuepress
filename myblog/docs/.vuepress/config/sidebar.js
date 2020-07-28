@@ -62,15 +62,29 @@ module.exports = [
         {
           title: '对象&类&函数',
           path: '/javascript/grammar/8.对象&类&函数.html#对象&类&函数'
+        }
+      ]
+    },
+    {
+      title: 'ES6',
+      path: '/javascript/ES6/1.变量的解构赋值.html#变量的解构赋值',
+      children:[
+        {
+          title: '变量的解构赋值',
+          path: '/javascript/ES6/1.变量的解构赋值.html#变量的解构赋值'
         },
         {
-          title: 'ES6',
-          path: '/javascript/grammar/9.ES6.html#ES6'
+          title: '函数的扩展',
+          path: '/javascript/ES6/2.函数的扩展.html#函数的扩展'
+        },
+        {
+          title: 'Set和Map数据结构',
+          path: '/javascript/ES6/3.Set和Map数据结构.html#Set和Map数据结构'
         }
       ]
     }
     ],
-    sidebarDepth: 1,
+    sidebarDepth: 2,
   }
   
 
