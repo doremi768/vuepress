@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Generator&amp;Iterator | Learning Notes</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/blog/img/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?914a62bca04ed9262c17f936d4f4961e";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <meta name="description" content="">
+    <link rel="preload" href="/blog/assets/css/0.styles.a70707f6.css" as="style"><link rel="preload" href="/blog/assets/js/app.da5a8dce.js" as="script"><link rel="preload" href="/blog/assets/js/2.48069be5.js" as="script"><link rel="preload" href="/blog/assets/js/18.166322f5.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.60e5e7d7.js"><link rel="prefetch" href="/blog/assets/js/11.0e925f2a.js"><link rel="prefetch" href="/blog/assets/js/12.80859188.js"><link rel="prefetch" href="/blog/assets/js/13.e370a94e.js"><link rel="prefetch" href="/blog/assets/js/14.fe4e3c78.js"><link rel="prefetch" href="/blog/assets/js/15.2b056293.js"><link rel="prefetch" href="/blog/assets/js/16.fcbfd8f5.js"><link rel="prefetch" href="/blog/assets/js/17.93fd3825.js"><link rel="prefetch" href="/blog/assets/js/19.b9ebb591.js"><link rel="prefetch" href="/blog/assets/js/20.8002f350.js"><link rel="prefetch" href="/blog/assets/js/21.612b0a32.js"><link rel="prefetch" href="/blog/assets/js/22.6f76dbe3.js"><link rel="prefetch" href="/blog/assets/js/23.b836c43e.js"><link rel="prefetch" href="/blog/assets/js/24.96b7c595.js"><link rel="prefetch" href="/blog/assets/js/25.5ae6231b.js"><link rel="prefetch" href="/blog/assets/js/26.3417184d.js"><link rel="prefetch" href="/blog/assets/js/3.64417f83.js"><link rel="prefetch" href="/blog/assets/js/4.6649b4be.js"><link rel="prefetch" href="/blog/assets/js/5.7b6b3935.js"><link rel="prefetch" href="/blog/assets/js/6.d96c1510.js"><link rel="prefetch" href="/blog/assets/js/7.60a8941d.js"><link rel="prefetch" href="/blog/assets/js/8.33f72b1d.js"><link rel="prefetch" href="/blog/assets/js/9.55bdefe8.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.a70707f6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Learning Notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/cacatalog/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/html_css/" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/project/" class="nav-link">
+  项目
+</a></div><div class="nav-item"><a href="https://gitee.com/what_and" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/doremi768" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/cacatalog/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/html_css/" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/project/" class="nav-link">
+  项目
+</a></div><div class="nav-item"><a href="https://gitee.com/what_and" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/doremi768" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/blog/html_css/" class="sidebar-heading clickable"><span>html&amp;css指南</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/html_css/html.html" class="sidebar-link">html 面试题</a></li><li><a href="/blog/html_css/css.html" class="sidebar-link">css 面试题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/javascript/" class="sidebar-heading clickable router-link-active open"><span>JavaScript指南</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/grammar/1.data_type.html#数据类型" class="sidebar-heading clickable"><span>JavaScript基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/ES6/1.变量的解构赋值.html#变量的解构赋值" class="sidebar-heading clickable open"><span>ES6</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/javascript/ES6/1.变量的解构赋值.html" class="sidebar-link">变量的解构赋值</a></li><li><a href="/blog/javascript/ES6/2.函数的扩展.html" class="sidebar-link">函数的扩展</a></li><li><a href="/blog/javascript/ES6/3.Set和Map数据结构.html" class="sidebar-link">Set和Map数据结构</a></li><li><a href="/blog/javascript/ES6/4.Proxy&amp;Reflect.html" class="sidebar-link">Proxy&amp;Reflect</a></li><li><a href="/blog/javascript/ES6/5.Generator.html" aria-current="page" class="active sidebar-link">Generator&amp;Iterator</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/javascript/ES6/5.Generator.html#generator" class="sidebar-link">Generator</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/ES6/5.Generator.html#iterator" class="sidebar-link">Iterator</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/ES6/5.Generator.html#async" class="sidebar-link">async</a></li></ul></li><li><a href="/blog/javascript/ES6/6.Class.html" class="sidebar-link">Class</a></li><li><a href="/blog/javascript/ES6/7.Module.html" class="sidebar-link">Module</a></li></ul></section></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="generator-iterator"><a href="#generator-iterator" class="header-anchor">#</a> Generator&amp;Iterator</h1> <p>其实这Generator和Iterator应该分开来总结的，但由于这两个知识点的可扩展面太广，我的知识储备也并不充足。因此就合二为一，总结一些它们最基本的知识。</p> <h2 id="generator"><a href="#generator" class="header-anchor">#</a> Generator</h2> <p>先看一段代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token operator">*</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">yield</span> x<span class="token punctuation">;</span>
+	console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>			<span class="token comment">//fn {&lt;suspended&gt;}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">//{value: 10, done: false}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+<span class="token comment">//10 这时调用函数中的console.log</span>
+<span class="token comment">//{value: undefined, done: true}</span>
+</code></pre></div><p>可以看到上面的代码多出了奇形怪状的语法。那这些代码的含义是什么呢？</p> <p>先从 <code>*</code> 说起，<code>function *</code>这种声明方式呢，会定义一个<font color="#3EAF7C"><strong>生成器函数</strong></font><font color="#FA8072">(generator function)</font>。而这个生成器函数的返回值是一个 <font color="#FA8072">Generator</font> 对象。如上代码的 <code>console.log(f)</code> 可以得知。但调用一个生成器函数并不会马上执行里面的语句，而是返回一个这个生成器的<font color="#3EAF7C"><strong>迭代器对象</strong></font>。那么迭代器又是什么鬼？</p> <p>这要从 ES6 的新增功能，迭代协议说起，只要遵循一些约定，任何对象都可以实现这些协议。有两种协议：<font color="#3EAF7C"><strong>可迭代协议</strong></font>和<font color="#3EAF7C"><strong>迭代器协议</strong></font>。</p> <p>如果想让对象具有可迭代性，在可迭代协议中规定，对象必须实现 <font color="#FA8072">@@iterator</font> 方法，意味着该对象(或其原型链中的一个对象)必须带有 <font color="#FA8072">@@iterator</font> 键的属性，可以通过常量来使用该键。如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterable<span class="token punctuation">]</span>       <span class="token comment">//属性</span>
+<span class="token comment">//零参数函数，它的值是返回符合迭代器协议的对象。</span>
+</code></pre></div><p>迭代器协议实际上就是规定了，当一个对象按照规定实现 <font color="#FA8072">next()</font> 方法时，它就是<font color="#3EAF7C"><strong>迭代器</strong></font>。</p> <p>而迭代器对象实现的next()方法必须包含两个属性才符合协议。</p> <p>1.<strong>done(布尔值)</strong><br>
+如果为 false，表示迭代器能够产生序列中的下一个值。<br>
+如果为 true，表示迭代器已完成其序列。</p> <p>2.<strong>value()</strong>
+迭代器返回的任何js值。</p> <p>在回到生成器函数，刚才说了调用一个生成器函数并不会马上执行它里面的语句，而是返回一个这个生成器的迭代器对象。当这个迭代器的 <font color="#FA8072">next()</font> 方法被首次调用时，其内的语句会执行到第一个出现的 <font color="#FA8072">yield</font> 的位置为止。而 yield 后紧跟迭代器要返回的值。再来看看代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token operator">*</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">yield</span> x<span class="token punctuation">;</span>
+    conosle<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> f <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+f<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       
+<span class="token comment">//此时next第一次被调用，然后代码才开始执行，执行到yield时停止</span>
+<span class="token comment">//然后返回一个迭代器对象，对象的value属性的属性值，就是传进来的10。</span>
+
+f<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//此时进行执行代码，没有遇到yield，代码一直执行完。打印 10,</span>
+<span class="token comment">//返回迭代器对象，对象的value属性的属性值为undefined。</span>
+</code></pre></div><p>由此看来 yield 表达式和 return 语句还是有相似之处。</p> <p><strong>相似之处</strong><br>
+在于都能返回紧跟在后面的值。</p> <p><strong>区别</strong><br>
+1.在于每次遇到 <font color="#FA8072">yield</font> ，函数会暂停执行，而<font color="#FA8072">return</font> 语句不具备为止记忆的功能。<br>
+2.一个函数里面，只能执行一次（或者说一个）<font color="#FA8072">return</font> 语句，但是可以执行多次（或者说多个）<font color="#FA8072">yield</font> 表达式。
+3.正常函数只能返回一个值，因为只能执行一次 <font color="#FA8072">return</font>；Generator 函数可以返回一系列的值，因为可以有任意多个 <font color="#FA8072">ieldy</font>。从另一个角度看，也可以说 <font color="#FA8072">Generator</font> 生成了一系列的值，这也就是它的名称的来历（英语中，<font color="#FA8072">generator</font> 这个词是“生成器”的意思）。</p> <h3 id="yield-表达式"><a href="#yield-表达式" class="header-anchor">#</a> yield* 表达式</h3> <p>如果在 <font color="#FA8072">Generator</font> 函数内部，调用另一个 <font color="#FA8072">Generator</font> 函数。需要在前者的函数体内部，自己手动完成遍历。如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span> <span class="token string">'b'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
+  <span class="token comment">// 手动遍历 foo()</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">yield</span> <span class="token string">'y'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> v <span class="token keyword">of</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// x</span>
+<span class="token comment">// a</span>
+<span class="token comment">// b</span>
+<span class="token comment">// y</span>
+</code></pre></div><p>上面代码中需要需手动遍历 f<font color="#FA8072">oo</font>，如果有多个 <font color="#FA8072">Generator</font> 函数嵌套，就非常麻烦。</p> <p>ES6 提供了 <code>yield*</code> 表达式，作为解决办法，用来在一个 <font color="#FA8072">Generator</font> 函数里面执行另一个 <font color="#FA8072">Generator</font> 函数。如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span><span class="token operator">*</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">yield</span> <span class="token string">'x'</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span><span class="token operator">*</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">yield</span> <span class="token string">'y'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// &quot;x&quot;</span>
+<span class="token comment">// &quot;a&quot;</span>
+<span class="token comment">// &quot;b&quot;</span>
+<span class="token comment">// &quot;y&quot;</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">Generator 与上下文</p> <p><font color="#FA8072">Generator</font> 函数的执行产生的上下文环境，一旦遇到 <font color="#FA8072">yield</font> 命令，就会暂时退出堆栈，但是并不会消失，里面的所有变量和对象会冻结在当前状态。等到对它执行 <font color="#FA8072">next</font> 命令的时候，这个上下文环境又会重新假如调用栈，冻结的变量和对象恢复执行。</p></div> <h2 id="iterator"><a href="#iterator" class="header-anchor">#</a> Iterator</h2> <p>上面也有简单的提到了 <font color="#FA8072">Iterator</font>，它的作用有三个：</p> <blockquote><p>1.为各种数据结构，提供一个统一的、简便的访问接口；<br>
+2.使得数据结构的成员能够按某种次序排列；<br>
+3. ES6 创造了一种新的遍历命令 <code>for...of</code> 循环，<font color="#FA8072">Iterator</font> 接口主要供 <code>for...of</code> 消费。
+如下：</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+          value<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+          done<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>上面代码中，对象是可遍历的，因为具有 <code>Symbol.iterator</code> 属性。执行这个属性，会返回一个遍历器对象。该对象的根本特征就是具有 <font color="#FA8072">next</font> 方法。每次调用 <font color="#FA8072">next</font> 方法，都会返回一个代表当前成员的信息对象，具有 <font color="#FA8072">value</font> 和 <font color="#FA8072">done</font> 两个属性。</p> <p>ES6 中有些数据结构原生具备 <font color="#FA8072">Iterator</font> 接口，即不用任何处理，就可以被 <code>for...of</code> 循环遍历。原因在于，这些数据结构原生部署了 <code>Symbol.iterator</code> 属性，另外一些数据结构没有（比如对象）。</p> <p>原生具备 <font color="#FA8072">Iterator</font> 接口的数据结构如下：</p> <ul><li>Array</li> <li>Map</li> <li>Set</li> <li>String</li> <li>TypedArray</li> <li>函数的 arguments 对象</li> <li>NodeList 对象</li></ul> <p>如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> o <span class="token operator">=</span> arr<span class="token punctuation">[</span>Symbol<span class="token punctuation">.</span>iterator<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+o<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//{value: 1, done: false}</span>
+o<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//{value: 1, done: false}</span>
+o<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//{value: undefined, done: true}</span>
+</code></pre></div><p>上面代码中，变量 <font color="#FA8072">arr</font> 是一个数组，原生就具有遍历器接口，部署在 <font color="#FA8072">arr</font> 的 <code>Symbol.iterator</code> 属性上面。所以，调用这个属性，就得到遍历器对象。</p> <p>那为什么对象没有默认部署的 Iterator 接口呢？<br>
+因为对象哪个属性先遍历，哪个属性后遍历是不确定的，需要开发者手动指定。本质上，遍历器是一种<font color="#3EAF7C"><strong>线性处理</strong></font>，对于任何非线性的数据结构，部署遍历器接口，就等于部署一种<font color="#3EAF7C"><strong>线性转换</strong></font>。</p> <h3 id="默认调用的-iterator-接口的场合"><a href="#默认调用的-iterator-接口的场合" class="header-anchor">#</a> 默认调用的 Iterator 接口的场合</h3> <p>有一些场合会默认调用 <font color="#FA8072">Iterator</font> 接口（即 <code>Symbol.iterator</code> 方法）
+<strong>1.解构赋值</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> <span class="token punctuation">[</span><span class="token operator">...</span>rest<span class="token punctuation">]</span> <span class="token operator">=</span> s<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>rest<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">//[1,2,3]</span>
+</code></pre></div><p><strong>2.扩展运算符</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token string">'hello'</span><span class="token punctuation">;</span>
+
+conosle<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>str<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//h e l l o</span>
+</code></pre></div><p>上面代码之所以没有逗号的原因时因为逗号被 <code>console.log()</code>当成参数分割符了。</p> <p>实际上，这提供了一种简便机制，可以将任何部署了 <font color="#FA8072">Iterator</font> 接口的数据结构，转为数组。也就是说，只要某个数据结构部署了 <font color="#FA8072">Iterator</font> 接口，就可以对它使用扩展运算符，将其转为数组。</p> <p><strong>3.yield</strong>
+yield* 后面跟的是一个可遍历的结构的话，它会调用该结构的遍历器接口。</p> <p><strong>4.其他场合</strong>
+由于数组的遍历会调用遍历器接口，所以任何接受数组作为参数的场合，其实都调用了遍历器接口。比如：</p> <ul><li>for...of</li> <li>Array.from()</li> <li>Map(), Set(), WeakMap(), WeakSet()</li> <li>Promise.all()</li> <li>Promise.race()</li></ul> <h2 id="async"><a href="#async" class="header-anchor">#</a> async</h2> <p>ES2017 标准引入了<font color="#FA8072"> async</font> 函数，使得异步操作变得更加方便。</p> <p><font color="#FA8072">async</font> 函数实际上是<font color="#FA8072"> Generator</font> 函数的语法糖。</p> <p><font color="#FA8072">async</font> 函数就是将 <font color="#FA8072">Generator</font> 函数的星号（*）替换成 <font color="#FA8072">async</font>，将 <font color="#FA8072">yield</font> 替换成 <font color="#FA8072">await</font>，仅此而已。</p> <p><font color="#FA8072">async</font> 函数的返回值是 <font color="#FA8072">Promise</font> 对象，这比 <font color="#FA8072">Generator</font> 函数的返回值是 <font color="#FA8072">Iterator</font> 对象方便多了。可以用 <font color="#FA8072">then</font> 方法指定下一步的操作。</p> <h3 id="await命令"><a href="#await命令" class="header-anchor">#</a> await命令</h3> <p>正常情况下，<font color="#FA8072">await</font> 命令后面是一个 <font color="#FA8072">Promise</font> 对象，返回该对象的结果。如果不是 <font color="#FA8072">Promise</font> 对象，就直接返回对应的值。如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 等同于</span>
+  <span class="token comment">// return 123;</span>
+  <span class="token keyword">return</span> <span class="token keyword">await</span> <span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// 123</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/javascript/ES6/4.Proxy&amp;Reflect.html" class="prev">
+        Proxy&amp;Reflect
+      </a></span> <span class="next"><a href="/blog/javascript/ES6/6.Class.html">
+        Class
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.da5a8dce.js" defer></script><script src="/blog/assets/js/2.48069be5.js" defer></script><script src="/blog/assets/js/18.166322f5.js" defer></script>
+  </body>
+</html>

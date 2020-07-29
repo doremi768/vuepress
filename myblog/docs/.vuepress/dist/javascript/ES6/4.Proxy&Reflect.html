@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Proxy &amp; Reflect | Learning Notes</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/blog/img/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?914a62bca04ed9262c17f936d4f4961e";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <meta name="description" content="">
+    <link rel="preload" href="/blog/assets/css/0.styles.a70707f6.css" as="style"><link rel="preload" href="/blog/assets/js/app.da5a8dce.js" as="script"><link rel="preload" href="/blog/assets/js/2.48069be5.js" as="script"><link rel="preload" href="/blog/assets/js/17.93fd3825.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.60e5e7d7.js"><link rel="prefetch" href="/blog/assets/js/11.0e925f2a.js"><link rel="prefetch" href="/blog/assets/js/12.80859188.js"><link rel="prefetch" href="/blog/assets/js/13.e370a94e.js"><link rel="prefetch" href="/blog/assets/js/14.fe4e3c78.js"><link rel="prefetch" href="/blog/assets/js/15.2b056293.js"><link rel="prefetch" href="/blog/assets/js/16.fcbfd8f5.js"><link rel="prefetch" href="/blog/assets/js/18.166322f5.js"><link rel="prefetch" href="/blog/assets/js/19.b9ebb591.js"><link rel="prefetch" href="/blog/assets/js/20.8002f350.js"><link rel="prefetch" href="/blog/assets/js/21.612b0a32.js"><link rel="prefetch" href="/blog/assets/js/22.6f76dbe3.js"><link rel="prefetch" href="/blog/assets/js/23.b836c43e.js"><link rel="prefetch" href="/blog/assets/js/24.96b7c595.js"><link rel="prefetch" href="/blog/assets/js/25.5ae6231b.js"><link rel="prefetch" href="/blog/assets/js/26.3417184d.js"><link rel="prefetch" href="/blog/assets/js/3.64417f83.js"><link rel="prefetch" href="/blog/assets/js/4.6649b4be.js"><link rel="prefetch" href="/blog/assets/js/5.7b6b3935.js"><link rel="prefetch" href="/blog/assets/js/6.d96c1510.js"><link rel="prefetch" href="/blog/assets/js/7.60a8941d.js"><link rel="prefetch" href="/blog/assets/js/8.33f72b1d.js"><link rel="prefetch" href="/blog/assets/js/9.55bdefe8.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.a70707f6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Learning Notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/cacatalog/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/html_css/" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/project/" class="nav-link">
+  项目
+</a></div><div class="nav-item"><a href="https://gitee.com/what_and" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/doremi768" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/cacatalog/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/html_css/" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/project/" class="nav-link">
+  项目
+</a></div><div class="nav-item"><a href="https://gitee.com/what_and" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/doremi768" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/blog/html_css/" class="sidebar-heading clickable"><span>html&amp;css指南</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/html_css/html.html" class="sidebar-link">html 面试题</a></li><li><a href="/blog/html_css/css.html" class="sidebar-link">css 面试题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/javascript/" class="sidebar-heading clickable router-link-active open"><span>JavaScript指南</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/grammar/1.data_type.html#数据类型" class="sidebar-heading clickable"><span>JavaScript基础</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/ES6/1.变量的解构赋值.html#变量的解构赋值" class="sidebar-heading clickable open"><span>ES6</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/javascript/ES6/1.变量的解构赋值.html" class="sidebar-link">变量的解构赋值</a></li><li><a href="/blog/javascript/ES6/2.函数的扩展.html" class="sidebar-link">函数的扩展</a></li><li><a href="/blog/javascript/ES6/3.Set和Map数据结构.html" class="sidebar-link">Set和Map数据结构</a></li><li><a href="/blog/javascript/ES6/4.Proxy&amp;Reflect.html" aria-current="page" class="active sidebar-link">Proxy&amp;Reflect</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/javascript/ES6/4.Proxy&amp;Reflect.html#proxy" class="sidebar-link">Proxy</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/ES6/4.Proxy&amp;Reflect.html#relfect" class="sidebar-link">Relfect</a></li></ul></li><li><a href="/blog/javascript/ES6/5.Generator.html" class="sidebar-link">Generator&amp;Iterator</a></li><li><a href="/blog/javascript/ES6/6.Class.html" class="sidebar-link">Class</a></li><li><a href="/blog/javascript/ES6/7.Module.html" class="sidebar-link">Module</a></li></ul></section></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="proxy-reflect"><a href="#proxy-reflect" class="header-anchor">#</a> Proxy &amp; Reflect</h1> <h2 id="proxy"><a href="#proxy" class="header-anchor">#</a> Proxy</h2> <p>对于 <font color="#FA8072">Proxy</font>,在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener noreferrer">MDN<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 中是这样定义的,<font color="#FA8072">Proxy</font> 对象用于定义基本操作的自定义行为（如属性查找、赋值、枚举、函数调用等）。</p> <p>这样理解起来感觉比较晦涩，对于我来说不易学习与掌握。我采用了比喻的方法来描述 <font color="#FA8072">Proxy</font> 到底是什么。</p> <p>要租房子时，大部分人都选择找中介，这有一部分原因就是用中介来保护自己的个人信息，而不是到处暴露自己的个人信息。对于这一性质来说，代理就像中介。先看如下代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'xiaoming'</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token string">'800'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">,</span>p<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//xiaoming 800</span>
+
+p<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">900</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">//900</span>
+</code></pre></div><p>上面代码的 <font color="#FA8072">Proxy</font>，这个代理实际上就是一个类。<br>
+第一个参数叫 <font color="#FA8072">target</font>，就是要包装的目标对象 <font color="#FA8072">Proxy</font> 。它可以是任何类型的对象，包括本机数组，函数甚至其他代理。<br>
+第二个参数叫 <font color="#FA8072">handler</font> 就是一个对象，其属性是定义对代理执行操作时的行为的函数(代理了之后要做的事)。<br>
+以上代码中在代理的时候 <font color="#FA8072">{}</font> 什么也没有传，就相当于透传原始的信息。</p> <p>列举一些 <font color="#FA8072">Proxy</font> 的引用场景</p> <p>1.想拿到一个数据的备份，但又不想进行赋值操作，换句话说拿到了数据之后不允许进行 <font color="#FA8072">set</font>操作。从服务端拿到数据之后，需要一份进行存底，然后把这个数据拷贝走拿去做操作。当想还原的时候，就可以通过备份还原。如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'xiaoming'</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token string">'800'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> p  <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">{</span>
+    <span class="token keyword">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">/**
+     *  target: 被代理的对象
+     *  key: 对象的属性值
+     *  value: 赋给它的值
+    */</span>
+    <span class="token keyword">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//800</span>
+
+<span class="token comment">//这样就可以保证 p 永远不会被修改。</span>
+p<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">900</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//800</span>
+</code></pre></div><p>在 ES5 中也可以实现类似的效果，如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'xiaoming'</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token string">'800'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Object<span class="token punctuation">.</span><span class="token function">freeze</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+obj<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">900</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">//800</span>
+</code></pre></div><p>但有一个弊端是对象被锁死，对象自己也不能修改。</p> <p>第二个场景，需要进行校验的时候，如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'xiaoming'</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token string">'800'</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">//将要拦截的操作抽离出来，降低耦合。</span>
+<span class="token keyword">let</span> <span class="token function-variable function">validator</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> value</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">//判断属性存不存在</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>Reflect<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>key <span class="token operator">==</span> <span class="token string">'price'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>value <span class="token operator">&gt;</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'price exceed 800'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+             target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> value<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+         <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">{</span>
+    <span class="token keyword">get</span> <span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//当没有数据的时候会返回一个undefined，这样做的话用户体验会下降，所以加上'',只会感觉到这里没有东西</span>
+        <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token keyword">set</span><span class="token operator">:</span> validator
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+p<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">900</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//900</span>
+
+p<span class="token punctuation">.</span>price <span class="token operator">=</span> <span class="token number">1200</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">//Uncaught TypeError: price exceed 800</span>
+</code></pre></div><h2 id="relfect"><a href="#relfect" class="header-anchor">#</a> Relfect</h2> <p>它是一个内置的对象，它提供拦截 JavaScript 操作的方法。这些方法与 <font color="#FA8072">proxy handlers</font> 的方法相同。<font color="#FA8072">Reflect</font> 不是一个函数对象，因此它是<font color="#3EAF7C"><strong>不可构造</strong></font>的。</p> <p>Reflect 对象的设计目的如下：</p> <p>1.将 <font color="#FA8072">Object</font> 对象的一些对象的一些明显属于语言内部的方法，放到 <font color="#FA8072">Reflect</font> 对象上。现阶段，某些方法同时在 <font color="#FA8072">Object</font> 和 <font color="#FA8072">Reflect</font> 对象上部署，根据 <font color="#FA8072">W3C</font> 标准，未来的新方法将只部署在 <font color="#FA8072">Reflect</font> 对象上。因此不定在未来会移除<font color="#FA8072">Object</font> 上面的方法和属性。</p> <p>2.修改某些 <font color="#FA8072">Object</font> 方法的返回结果，让其变得更合理。</p> <p>3.让 <font color="#FA8072">Object</font> 操作都变成<font color="#3EAF7C"><strong>函数行为</strong></font>。某些 <font color="#FA8072">Object</font> 操作是命令式。如下：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 老写法</span>
+<span class="token string">'assign'</span> <span class="token keyword">in</span> Object <span class="token comment">// true</span>
+
+<span class="token comment">// 新写法</span>
+Reflect<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>Object<span class="token punctuation">,</span> <span class="token string">'assign'</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><p>4.只要 <font color="#FA8072">Proxy</font> 对象具有的代理方法，<font color="#FA8072">Reflect</font> 对象全部具有，以<font color="#3EAF7C"><strong>静态方法</strong></font>的形式存在。这些方法能够执行默认行为，无论 <font color="#FA8072">Proxy</font> 怎么修改默认行为，总是可以通过 <font color="#FA8072">Reflect</font> 对应的方法获取默认行为。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/javascript/ES6/3.Set和Map数据结构.html" class="prev">
+        Set和Map数据结构
+      </a></span> <span class="next"><a href="/blog/javascript/ES6/5.Generator.html">
+        Generator&amp;Iterator
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.da5a8dce.js" defer></script><script src="/blog/assets/js/2.48069be5.js" defer></script><script src="/blog/assets/js/17.93fd3825.js" defer></script>
+  </body>
+</html>

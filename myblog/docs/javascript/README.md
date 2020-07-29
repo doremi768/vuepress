@@ -25,3 +25,11 @@
 [函数的扩展](/javascript/ES6/2.函数的扩展.html#函数的扩展)
 
 [Set和Map数据结构](/javascript/ES6/3.Set和Map数据结构.html#Set和Map数据结构)
+
+[Proxy&Reflect](/javascript/ES6/4.Proxy&Reflect.html#Proxy&Reflect)
+
+[Generator&Iterator](/javascript/ES6/5.Generator.html#Grnerator&Iterator)
+
+[Class](/javascript/ES6/6.Class.html#Class)
+
+[Module](/javascript/ES6/7.Module.html#Module)

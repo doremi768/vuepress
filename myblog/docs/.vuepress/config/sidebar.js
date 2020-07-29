@@ -80,6 +80,22 @@ module.exports = [
         {
           title: 'Set和Map数据结构',
           path: '/javascript/ES6/3.Set和Map数据结构.html#Set和Map数据结构'
+        },
+        {
+          title: 'Proxy&Reflect',
+          path: '/javascript/ES6/4.Proxy&Reflect.html#Proxy&Reflect'
+        },
+        {
+          title: 'Generator&Iterator',
+          path: '/javascript/ES6/5.Generator.html#Grnerator&Iterator'
+        },
+        {
+          title: 'Class',
+          path: '/javascript/ES6/6.Class.html#Class'
+        },
+        {
+          title: 'Module',
+          path: '/javascript/ES6/7.Module.html#Module'
         }
       ]
     }
