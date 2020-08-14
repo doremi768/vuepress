@@ -33,3 +33,9 @@
 [Class](/javascript/ES6/6.Class.html#Class)
 
 [Module](/javascript/ES6/7.Module.html#Module)
+
+## JS手写系列
+
+[数组常用api](/javascript/JSWrite/1.数组常用api.html#数组常用api)
+
+[Promises/A+规范](/javascript/JSWrite/2.Promises/A+规范.html#Promises/A+规范)

@@ -98,25 +98,45 @@ module.exports = [
           path: '/javascript/ES6/7.Module.html#Module'
         }
       ]
+    },
+    {
+      title: 'JS手写系列',
+      path: '/javascript/JSWrite/1.数组常用api.html#数组常用api',
+      children:[
+        {
+          title: '数组常用api',
+          path: '/javascript/JSWrite/1.数组常用api.html#数组常用api'
+        },
+        {
+          title: 'Promises/A+规范',
+          path: '/javascript/JSWrite/2.Promises/A+规范.html#Promises/A+规范'
+        }
+      ]
     }
     ],
     sidebarDepth: 2,
+  },
+  {
+    title: '项目',
+    path: '/project/',  
+    collapsable: false, 
+    children: [
+      {
+        title: '仿饿了么',
+        path: '/project/elm/1.项目概述.html#项目概述',
+        children: [
+          {
+            title: '项目概述',
+            path: '/project/elm/1.项目概述.html#项目概述'
+          },
+          {
+            title: '定位功能',
+            path: '/project/elm/2.定位功能.html#定位功能'
+          }
+        ]
+      }
+    ]
   }
   
 
 ]
-// {title: '数据类型',path: '/javascript/1.data_type'},
-//       {title: '变量',path: '/javascript/2.variable'},
-// module.exports = {
-//   '/html_css/':['','html','css'],
-//   '/javascript/':[{
-//     title: '导航',
-//     collapsable: false,
-//     children: [
-//       {title: '',path: '/javascript/grammar/'},
-//       {title: '',path: '/javascript/grammar/1.data_type'},
-//       {title: '',path: '/javascript/grammar/2.variable'}
-      
-//     ]
-//   }]
-// }
