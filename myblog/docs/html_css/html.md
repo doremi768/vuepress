@@ -68,7 +68,6 @@
 
 ## 8.Html5有哪些新特性
 ### ①语义标签  
-![image](https://upload-images.jianshu.io/upload_images/15827882-4057d561069e7a15.png)  
 ```html
     <header>...</header>      头部    
     <nav>...</nav>            导航    
@@ -78,24 +77,24 @@
     <article>...</article>    代表一个独立的、完整的相关内容块，可独立于页面其它内容使用。例如一篇完整的论坛帖子，一篇博客文章，一个用户评论等 
 ```
 
- ②增强型表单控件
+### ②增强型表单控件
 
- ③用于控制音视频播放的audio和video元素
+### ③用于控制音视频播放的audio和video元素
 
- ④canvas 绘画和 svg绘画
+### ④canvas 绘画和 svg绘画
 
 * Canvas是通过javascript来绘制2D图形  
 * svg是一种使用xml描述2d图形的语言
 
- ⑤drag和drop拖放api
+### ⑤drag和drop拖放api
 
- ⑥web worker （相当于给js制造了一个多线程环境）
+### ⑥web worker （相当于给js制造了一个多线程环境）
 
- ⑦web storage <font color="#3EAF7C">**本地存储**</font>
+### ⑦web storage <font color="#3EAF7C">**本地存储**</font>
 * <font color="#FA8072">localStorage</font> 长期存储数据，浏览器关闭后数据不丢失
 * <font color="#FA8072">sessionStorage</font>  的数据在浏览器关闭后自动删除
 
- ⑧webSocket （服务器推送技术）
+### ⑧webSocket （服务器推送技术）
 
- ⑨地理定位
+### ⑨地理定位
 Geolocation（地理定位）用于定位用户的位置  

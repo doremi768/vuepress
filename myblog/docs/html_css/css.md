@@ -41,7 +41,7 @@
 
 优先级为： 
 ```css
-    !important > id > class > tag | 伪类 | 属性选择;   !important比内联优先级高
+  优先级关系： !important > 内联样式 > ID 选择器 > 类选择器 = 属性选择器 = 伪类选择器 > 标签选择器 = 伪元素选择器
 ```
 
 ## 5. 对于BFC规范的理解?
@@ -59,7 +59,13 @@ overflow的值为auto,scroll或hidden
 display的值为table-ceil、table-caption和inline-block中的任何一个
 position的值不为relative和static
 ```
+:::tip overflow
+<font color="#FA8072">overflow: scroll</font>  
+将隐藏所有溢出的内容并使滚动条出现在相关元素上。如果内容没有溢出，滚动条仍然可见，但被禁用。
 
+<font color="#FA8072">overflow: auto</font>     
+非常相似，但滚动条仅在内容溢出时出现。
+:::
 ## 6.margin合并
 ### 什么是margin合并？
 
@@ -128,7 +134,7 @@ margin合并的计算规则： <font color="#FA8072">正正取大，正负相加
 ②当同时设置top/bottom使用时，<font color="#3EAF7C">**bottom无效**</font>；当同时设置left/right时，<font color="#3EAF7C">**right无效**</font>
 
 ### 3.Fixed
-①固定定位元素的包含块式根元素
+①固定定位元素的包含块是根元素
 
 ## 9.为什么要初始化css样式？
 ①因为浏览器的兼容问题，不同的浏览器对有些标签的默认值是不同的，如果没有对css初始化往往会出现浏览器之间的页面显示差异  
@@ -136,19 +142,19 @@ margin合并的计算规则： <font color="#FA8072">正正取大，正负相加
 ⑤提高编码质量，<font color="#000000">**减少了重复的样式**</font>
 
 ## 10.1rem、1em、1vh、1px各自代表的含义？
-1.rem是全部的长度都相对于<font color="#3EAF7C">**根元素**</font>
+1.rem相对单位 相对<font color="#3EAF7C">**根元素**</font>html的字体大小来计算
 
-2.em 子元素字体大小的em是字体大小是<font color="#3EAF7C">**相对于父元素**</font>
+2.em相对单位 基准点为父节点字体的大小，如果自身定义了 <font color="#FA8072">font-size</font> 按自身来计算（浏览器默认字体是16px）
 ```css
 元素的宽 | 高 | padding | margin 用em的话是相对于该元素的 font-size
 ```
-3.vw/vh
+3.vw/vh相对单位
   视窗的宽度和高度，相对于屏幕宽度和高度的1%，处理宽度的时候%单位更合适，高度vh	 更合适
 
-4.px 像素，相对于<font color="#3EAF7C">**屏幕分辨率**</font>而言
+4.px绝对单位 像素，相对于<font color="#3EAF7C">**屏幕分辨率**</font>而言
 
 ## 11.rgba()和opacity的透明效果有什么不同？
-rgba()和opacity都能实现透明效果，但最大的不同是<font color="#FA8072">opacity</font> 是 <font color="#3EAF7C">**作用域元素**</font>，设置的是元素内的所有内容的透明度
+rgba()和opacity都能实现透明效果，但最大的不同是 <font color="#FA8072">opacity</font> 是 <font color="#3EAF7C">**作用域元素**</font>，设置的是元素内的所有内容的透明度
 
 而rgba()只作用于元素的颜色或其背景色。(设置rgba透明的元素的子元素 <font color="#000000">**不会继承透明效果**</font>)
 
