@@ -20,6 +20,6 @@ git commit -m '完成css布局总结'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
- git push git@gitee.com:what_and/blog.git  master:gh-pages
+ git push -f git@gitee.com:what_and/blog.git  master:gh-pages
 
 cd -
