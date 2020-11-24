@@ -121,48 +121,61 @@ module.exports = [
     sidebarDepth: 2,
   },
   {
-    title: '项目指南',
-    path: '/project/',  
+    title: 'git命令大全',
+    path: '/git/', 
     collapsable: false, 
     children: [
       {
-        title: '信鸽',
-        path: '/project/xinge/1.项目概述.html#项目概述',
-        children: [
-          {
-            title: '项目概述',
-            path: '/project/xinge/1.项目概述.html#项目概述'
-          },
-          {
-            title: '前端技术要点',
-            path: '/project/xinge/2.前端技术要点.html#技术要点'
-          },
-          {
-            title: '后端技术要点',
-            path: '/project/xinge/3.后端技术要点.html#后端技术要点'
-          },
-          {
-            title: 'Mongoose增查改删',
-            path: '/project/xinge/mongoose.html#Mongoose增查改删'
-          }
-        ]
+        title: 'git',
+        path: '/git/git命令大全',
       },
-      {
-        title: '仿饿了么',
-        path: '/project/elm/1.项目概述.html#项目概述',
-        children: [
-          {
-            title: '项目概述',
-            path: '/project/elm/1.项目概述.html#项目概述'
-          },
-          {
-            title: '定位功能',
-            path: '/project/elm/2.定位功能.html#定位功能'
-          }
-        ]
-      }
-    ]
-  }
+      
+    ],
+    sidebarDepth: 1, 
+  },
+  // {
+  //   title: '项目指南',
+  //   path: '/project/',  
+  //   collapsable: false, 
+  //   children: [
+  //     {
+  //       title: '信鸽',
+  //       path: '/project/xinge/1.项目概述.html#项目概述',
+  //       children: [
+  //         {
+  //           title: '项目概述',
+  //           path: '/project/xinge/1.项目概述.html#项目概述'
+  //         },
+  //         {
+  //           title: '前端技术要点',
+  //           path: '/project/xinge/2.前端技术要点.html#技术要点'
+  //         },
+  //         {
+  //           title: '后端技术要点',
+  //           path: '/project/xinge/3.后端技术要点.html#后端技术要点'
+  //         },
+  //         {
+  //           title: 'Mongoose增查改删',
+  //           path: '/project/xinge/mongoose.html#Mongoose增查改删'
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       title: '仿饿了么',
+  //       path: '/project/elm/1.项目概述.html#项目概述',
+  //       children: [
+  //         {
+  //           title: '项目概述',
+  //           path: '/project/elm/1.项目概述.html#项目概述'
+  //         },
+  //         {
+  //           title: '定位功能',
+  //           path: '/project/elm/2.定位功能.html#定位功能'
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // }
   
 
 ]

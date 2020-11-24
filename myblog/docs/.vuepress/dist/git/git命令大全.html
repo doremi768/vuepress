@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>git命令大全 | Learning Notes</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    <link rel="icon" href="/blog/img/logo.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.2/jquery.fancybox.min.css">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?914a62bca04ed9262c17f936d4f4961e";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    <meta name="description" content="">
+    <link rel="preload" href="/blog/assets/css/0.styles.a70707f6.css" as="style"><link rel="preload" href="/blog/assets/js/app.808b127d.js" as="script"><link rel="preload" href="/blog/assets/js/2.48069be5.js" as="script"><link rel="preload" href="/blog/assets/js/12.47ad6794.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.7d9c6eb8.js"><link rel="prefetch" href="/blog/assets/js/11.cfe49e4e.js"><link rel="prefetch" href="/blog/assets/js/13.3729927f.js"><link rel="prefetch" href="/blog/assets/js/14.d92b1ad3.js"><link rel="prefetch" href="/blog/assets/js/15.aec8e804.js"><link rel="prefetch" href="/blog/assets/js/16.d55798ce.js"><link rel="prefetch" href="/blog/assets/js/17.00a0d571.js"><link rel="prefetch" href="/blog/assets/js/18.dedc0c9c.js"><link rel="prefetch" href="/blog/assets/js/19.506c7aa1.js"><link rel="prefetch" href="/blog/assets/js/20.0b0052aa.js"><link rel="prefetch" href="/blog/assets/js/21.1f343144.js"><link rel="prefetch" href="/blog/assets/js/22.6f28e251.js"><link rel="prefetch" href="/blog/assets/js/23.efc874b0.js"><link rel="prefetch" href="/blog/assets/js/24.5e0df49d.js"><link rel="prefetch" href="/blog/assets/js/25.4bec7637.js"><link rel="prefetch" href="/blog/assets/js/26.835eac85.js"><link rel="prefetch" href="/blog/assets/js/27.9c8f99f3.js"><link rel="prefetch" href="/blog/assets/js/28.701a4ba4.js"><link rel="prefetch" href="/blog/assets/js/29.2429e9e4.js"><link rel="prefetch" href="/blog/assets/js/3.ccf2a038.js"><link rel="prefetch" href="/blog/assets/js/30.aa980b29.js"><link rel="prefetch" href="/blog/assets/js/4.2d8b272b.js"><link rel="prefetch" href="/blog/assets/js/5.5461d4fe.js"><link rel="prefetch" href="/blog/assets/js/6.9b6317f9.js"><link rel="prefetch" href="/blog/assets/js/7.82d6e4b9.js"><link rel="prefetch" href="/blog/assets/js/8.33f72b1d.js"><link rel="prefetch" href="/blog/assets/js/9.55bdefe8.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.a70707f6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">Learning Notes</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/cacatalog/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/html_css/" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/git/" class="nav-link router-link-active">
+  git
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/what_and" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/doremi768" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/blog/cacatalog/" class="nav-link">
+  目录
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/html_css/" class="nav-link">
+  HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/javascript/" class="nav-link">
+  JavaScript
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="笔记" class="dropdown-title"><span class="title">笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/git/" class="nav-link router-link-active">
+  git
+</a></li></ul></div></div><div class="nav-item"><a href="https://gitee.com/what_and" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  码云
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/doremi768" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><a href="/blog/html_css/" class="sidebar-heading clickable"><span>html&amp;css指南</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/html_css/html.html" class="sidebar-link">html 面试题</a></li><li><a href="/blog/html_css/css.html" class="sidebar-link">css 面试题</a></li><li><a href="/blog/html_css/css布局.html" class="sidebar-link">css 布局</a></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/javascript/" class="sidebar-heading clickable"><span>JavaScript指南</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/grammar/1.data_type.html#数据类型" class="sidebar-heading clickable open"><span>JavaScript基础</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/javascript/grammar/1.data_type.html" class="sidebar-link">数据类型</a></li><li><a href="/blog/javascript/grammar/2.oc.html" class="sidebar-link">相等运算符与比较运算符</a></li><li><a href="/blog/javascript/grammar/3.variable.html" class="sidebar-link">变量</a></li><li><a href="/blog/javascript/grammar/4.闭包.html" class="sidebar-link">闭包</a></li><li><a href="/blog/javascript/grammar/5.this.html" class="sidebar-link">this</a></li><li><a href="/blog/javascript/grammar/6.循环和遍历.html" class="sidebar-link">循环和遍历</a></li><li><a href="/blog/javascript/grammar/7.对象.html" class="sidebar-link">对象</a></li><li><a href="/blog/javascript/grammar/8.对象&amp;类&amp;函数.html" class="sidebar-link">对象&amp;类&amp;函数</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/ES6/1.变量的解构赋值.html#变量的解构赋值" class="sidebar-heading clickable"><span>ES6</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/blog/javascript/JSWrite/1.数组常用api.html#数组常用api" class="sidebar-heading clickable"><span>JS手写系列</span> <span class="arrow right"></span></a> <!----></section></li></ul></section></li><li><section class="sidebar-group depth-0"><a href="/blog/git/" class="sidebar-heading clickable router-link-active open"><span>git命令大全</span> <!----></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/git/git命令大全.html" class="active sidebar-link">git</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#仓库" class="sidebar-link">仓库</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#配置" class="sidebar-link">配置</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#增加-删除文件" class="sidebar-link">增加/删除文件</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#代码提交" class="sidebar-link">代码提交</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#分支" class="sidebar-link">分支</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#标签" class="sidebar-link">标签</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#查看信息" class="sidebar-link">查看信息</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#远程同步" class="sidebar-link">远程同步</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#撤销" class="sidebar-link">撤销</a></li><li class="sidebar-sub-header"><a href="/blog/git/git命令大全.html#其他" class="sidebar-link">其他</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="git命令大全"><a href="#git命令大全" class="header-anchor">#</a> git命令大全</h1> <p><a href="https://gitee.com/all-about-git" target="_blank" rel="noopener noreferrer">收集于gitee<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="仓库"><a href="#仓库" class="header-anchor">#</a> 仓库</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 在当前目录新建一个Git代码库</span>
+<span class="token command">$ git init</span>
+
+<span class="token comment"># 新建一个目录，将其初始化为Git代码库</span>
+<span class="token command">$ git init [project-name]</span>
+
+<span class="token comment"># 下载一个项目和它的整个代码历史</span>
+<span class="token command">$ git clone [url]</span>
+</code></pre></div><h2 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 显示当前的Git配置</span>
+<span class="token command">$ git config<span class="token parameter"> --list</span></span>
+
+<span class="token comment"># 编辑Git配置文件</span>
+<span class="token command">$ git config<span class="token parameter"> -e</span> [--global]</span>
+
+<span class="token comment"># 设置提交代码时的用户信息</span>
+<span class="token command">$ git config [--global] user.name </span><span class="token string">&quot;[name]&quot;</span>
+<span class="token command">$ git config [--global] user.email </span><span class="token string">&quot;[email address]&quot;</span>
+</code></pre></div><h2 id="增加-删除文件"><a href="#增加-删除文件" class="header-anchor">#</a> 增加/删除文件</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 添加指定文件到暂存区</span>
+<span class="token command">$ git add [file1] [file2] ...</span>
+
+<span class="token comment"># 添加指定目录到暂存区，包括子目录</span>
+<span class="token command">$ git add [dir]</span>
+
+<span class="token comment"># 添加当前目录的所有文件到暂存区</span>
+<span class="token command">$ git add .</span>
+
+<span class="token comment"># 添加每个变化前，都会要求确认</span>
+<span class="token comment"># 对于同一个文件的多处变化，可以实现分次提交</span>
+<span class="token command">$ git add<span class="token parameter"> -p</span></span>
+
+<span class="token comment"># 删除工作区文件，并且将这次删除放入暂存区</span>
+<span class="token command">$ git rm [file1] [file2] ...</span>
+
+<span class="token comment"># 停止追踪指定文件，但该文件会保留在工作区</span>
+<span class="token command">$ git rm<span class="token parameter"> --cached</span> [file]</span>
+
+<span class="token comment"># 改名文件，并且将这个改名放入暂存区</span>
+<span class="token command">$ git mv [file-original] [file-renamed]</span>
+</code></pre></div><h2 id="代码提交"><a href="#代码提交" class="header-anchor">#</a> 代码提交</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 提交暂存区到仓库区</span>
+<span class="token command">$ git commit<span class="token parameter"> -m</span> [message]</span>
+
+<span class="token comment"># 提交暂存区的指定文件到仓库区</span>
+<span class="token command">$ git commit [file1] [file2] ...<span class="token parameter"> -m</span> [message]</span>
+
+<span class="token comment"># 提交工作区自上次commit之后的变化，直接到仓库区</span>
+<span class="token command">$ git commit<span class="token parameter"> -a</span></span>
+
+<span class="token comment"># 提交时显示所有diff信息</span>
+<span class="token command">$ git commit<span class="token parameter"> -v</span></span>
+
+<span class="token comment"># 使用一次新的commit，替代上一次提交</span>
+<span class="token comment"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span>
+<span class="token command">$ git commit<span class="token parameter"> --amend</span><span class="token parameter"> -m</span> [message]</span>
+
+<span class="token comment"># 重做上一次commit，并包括指定文件的新变化</span>
+<span class="token command">$ git commit<span class="token parameter"> --amend</span> [file1] [file2] ...</span>
+</code></pre></div><h2 id="分支"><a href="#分支" class="header-anchor">#</a> 分支</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 列出所有本地分支</span>
+<span class="token command">$ git branch</span>
+
+<span class="token comment"># 列出所有远程分支</span>
+<span class="token command">$ git branch<span class="token parameter"> -r</span></span>
+
+<span class="token comment"># 列出所有本地分支和远程分支</span>
+<span class="token command">$ git branch<span class="token parameter"> -a</span></span>
+
+<span class="token comment"># 新建一个分支，但依然停留在当前分支</span>
+<span class="token command">$ git branch [branch-name]</span>
+
+<span class="token comment"># 新建一个分支，并切换到该分支</span>
+<span class="token command">$ git checkout<span class="token parameter"> -b</span> [branch]</span>
+
+<span class="token comment"># 新建一个分支，指向指定commit</span>
+<span class="token command">$ git branch [branch] [commit]</span>
+
+<span class="token comment"># 新建一个分支，与指定的远程分支建立追踪关系</span>
+<span class="token command">$ git branch<span class="token parameter"> --track</span> [branch] [remote-branch]</span>
+
+<span class="token comment"># 切换到指定分支，并更新工作区</span>
+<span class="token command">$ git checkout [branch-name]</span>
+
+<span class="token comment"># 切换到上一个分支</span>
+<span class="token command">$ git checkout -</span>
+
+<span class="token comment"># 建立追踪关系，在现有分支与指定的远程分支之间</span>
+<span class="token command">$ git branch<span class="token parameter"> --set</span>-upstream [branch] [remote-branch]</span>
+
+<span class="token comment"># 合并指定分支到当前分支</span>
+<span class="token command">$ git merge [branch]</span>
+
+<span class="token comment"># 选择一个commit，合并进当前分支</span>
+<span class="token command">$ git cherry-pick [commit]</span>
+
+<span class="token comment"># 删除分支</span>
+<span class="token command">$ git branch<span class="token parameter"> -d</span> [branch-name]</span>
+
+<span class="token comment"># 删除远程分支</span>
+<span class="token command">$ git push origin<span class="token parameter"> --delete</span> [branch-name]</span>
+<span class="token command">$ git branch<span class="token parameter"> -dr</span> [remote/branch]</span>
+</code></pre></div><h2 id="标签"><a href="#标签" class="header-anchor">#</a> 标签</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 列出所有tag</span>
+<span class="token command">$ git tag</span>
+
+<span class="token comment"># 新建一个tag在当前commit</span>
+<span class="token command">$ git tag [tag]</span>
+
+<span class="token comment"># 新建一个tag在指定commit</span>
+<span class="token command">$ git tag [tag] [commit]</span>
+
+<span class="token comment"># 删除本地tag</span>
+<span class="token command">$ git tag<span class="token parameter"> -d</span> [tag]</span>
+
+<span class="token comment"># 删除远程tag</span>
+<span class="token command">$ git push origin :refs/tags/[tagName]</span>
+
+<span class="token comment"># 查看tag信息</span>
+<span class="token command">$ git show [tag]</span>
+
+<span class="token comment"># 提交指定tag</span>
+<span class="token command">$ git push [remote] [tag]</span>
+
+<span class="token comment"># 提交所有tag</span>
+<span class="token command">$ git push [remote]<span class="token parameter"> --tags</span></span>
+
+<span class="token comment"># 新建一个分支，指向某个tag</span>
+<span class="token command">$ git checkout<span class="token parameter"> -b</span> [branch] [tag]</span>
+</code></pre></div><h2 id="查看信息"><a href="#查看信息" class="header-anchor">#</a> 查看信息</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 显示有变更的文件</span>
+<span class="token command">$ git status</span>
+
+<span class="token comment"># 显示当前分支的版本历史</span>
+<span class="token command">$ git log</span>
+
+<span class="token comment"># 显示commit历史，以及每次commit发生变更的文件</span>
+<span class="token command">$ git log<span class="token parameter"> --stat</span></span>
+
+<span class="token comment"># 搜索提交历史，根据关键词</span>
+<span class="token command">$ git log<span class="token parameter"> -S</span> [keyword]</span>
+
+<span class="token comment"># 显示某个commit之后的所有变动，每个commit占据一行</span>
+<span class="token command">$ git log [tag] HEAD<span class="token parameter"> --pretty</span>=format:%s</span>
+
+<span class="token comment"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span>
+<span class="token command">$ git log [tag] HEAD<span class="token parameter"> --grep</span> feature</span>
+
+<span class="token comment"># 显示某个文件的版本历史，包括文件改名</span>
+<span class="token command">$ git log<span class="token parameter"> --follow</span> [file]</span>
+<span class="token command">$ git whatchanged [file]</span>
+
+<span class="token comment"># 显示指定文件相关的每一次diff</span>
+<span class="token command">$ git log<span class="token parameter"> -p</span> [file]</span>
+
+<span class="token comment"># 显示过去5次提交</span>
+<span class="token command">$ git log<span class="token parameter"> -5</span><span class="token parameter"> --pretty</span><span class="token parameter"> --oneline</span></span>
+
+<span class="token comment"># 显示所有提交过的用户，按提交次数排序</span>
+<span class="token command">$ git shortlog<span class="token parameter"> -sn</span></span>
+
+<span class="token comment"># 显示指定文件是什么人在什么时间修改过</span>
+<span class="token command">$ git blame [file]</span>
+
+<span class="token comment"># 显示暂存区和工作区的差异</span>
+<span class="token command">$ git diff</span>
+
+<span class="token comment"># 显示暂存区和上一个commit的差异</span>
+<span class="token command">$ git diff<span class="token parameter"> --cached</span> [file]</span>
+
+<span class="token comment"># 显示工作区与当前分支最新commit之间的差异</span>
+<span class="token command">$ git diff HEAD</span>
+
+<span class="token comment"># 显示两次提交之间的差异</span>
+<span class="token command">$ git diff [first-branch]...[second-branch]</span>
+
+<span class="token comment"># 显示今天你写了多少行代码</span>
+<span class="token command">$ git diff<span class="token parameter"> --shortstat</span> </span><span class="token string">&quot;@{0 day ago}&quot;</span>
+
+<span class="token comment"># 显示某次提交的元数据和内容变化</span>
+<span class="token command">$ git show [commit]</span>
+
+<span class="token comment"># 显示某次提交发生变化的文件</span>
+<span class="token command">$ git show<span class="token parameter"> --name</span>-only [commit]</span>
+
+<span class="token comment"># 显示某次提交时，某个文件的内容</span>
+<span class="token command">$ git show [commit]:[filename]</span>
+
+<span class="token comment"># 显示当前分支的最近几次提交</span>
+<span class="token command">$ git reflog</span>
+</code></pre></div><h2 id="远程同步"><a href="#远程同步" class="header-anchor">#</a> 远程同步</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 下载远程仓库的所有变动</span>
+<span class="token command">$ git fetch [remote]</span>
+
+<span class="token comment"># 显示所有远程仓库</span>
+<span class="token command">$ git remote<span class="token parameter"> -v</span></span>
+
+<span class="token comment"># 显示某个远程仓库的信息</span>
+<span class="token command">$ git remote show [remote]</span>
+
+<span class="token comment"># 增加一个新的远程仓库，并命名</span>
+<span class="token command">$ git remote add [shortname] [url]</span>
+
+<span class="token comment"># 取回远程仓库的变化，并与本地分支合并</span>
+<span class="token command">$ git pull [remote] [branch]</span>
+
+<span class="token comment"># 上传本地指定分支到远程仓库</span>
+<span class="token command">$ git push [remote] [branch]</span>
+
+<span class="token comment"># 强行推送当前分支到远程仓库，即使有冲突</span>
+<span class="token command">$ git push [remote]<span class="token parameter"> --force</span></span>
+
+<span class="token comment"># 推送所有分支到远程仓库</span>
+<span class="token command">$ git push [remote]<span class="token parameter"> --all</span></span>
+</code></pre></div><h2 id="撤销"><a href="#撤销" class="header-anchor">#</a> 撤销</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 恢复暂存区的指定文件到工作区</span>
+<span class="token command">$ git checkout [file]</span>
+
+<span class="token comment"># 恢复某个commit的指定文件到暂存区和工作区</span>
+<span class="token command">$ git checkout [commit] [file]</span>
+
+<span class="token comment"># 恢复暂存区的所有文件到工作区</span>
+<span class="token command">$ git checkout .</span>
+
+<span class="token comment"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span>
+<span class="token command">$ git reset [file]</span>
+
+<span class="token comment"># 重置暂存区与工作区，与上一次commit保持一致</span>
+<span class="token command">$ git reset<span class="token parameter"> --hard</span></span>
+
+<span class="token comment"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span>
+<span class="token command">$ git reset [commit]</span>
+
+<span class="token comment"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span>
+<span class="token command">$ git reset<span class="token parameter"> --hard</span> [commit]</span>
+
+<span class="token comment"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span>
+<span class="token command">$ git reset<span class="token parameter"> --keep</span> [commit]</span>
+
+<span class="token comment"># 新建一个commit，用来撤销指定commit</span>
+<span class="token comment"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span>
+<span class="token command">$ git revert [commit]</span>
+
+暂时将未提交的变化移除，稍后再移入
+<span class="token command">$ git stash</span>
+<span class="token command">$ git stash pop</span>
+</code></pre></div><h2 id="其他"><a href="#其他" class="header-anchor">#</a> 其他</h2> <div class="language-git extra-class"><pre class="language-git"><code><span class="token comment"># 生成一个可供发布的压缩包</span>
+<span class="token command">$ git archive</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/javascript/JSWrite/2.Promises/A+规范.html" class="prev">
+        Promises/A+规范
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.808b127d.js" defer></script><script src="/blog/assets/js/2.48069be5.js" defer></script><script src="/blog/assets/js/12.47ad6794.js" defer></script>
+  </body>
+</html>

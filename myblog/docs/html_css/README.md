@@ -1,6 +1,3 @@
----
-navbar: false
----
 # 指南
 
 ## html 面试题
